@@ -29,7 +29,7 @@ namespace AnimalMatchingGame
         Button lastClicked;
         bool findingMatch = false;
         int matchesFound;
-        private async Task Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)
         {
             if(sender is Button buttonClicked) // if an animal button is clicked
             {
@@ -41,8 +41,8 @@ namespace AnimalMatchingGame
                 }
                 else
                 {
-                    if((buttonClicked != lastClicked) && (buttonClicked.Text == lastClicked.Text)) // new button clicked, and it matched!
-                    {
+                    if((buttonClicked != lastClicked) && (buttonClicked.Text == lastClicked.Text) && (!string.IsNullOrWhiteSpace(buttonClicked.Text))) // new button clicked, and it matched!
+                    { 
                         matchesFound++; // increment matches for score
                         lastClicked.Text = " "; // reset the logic
                         buttonClicked.Text = " "; // reset the logic
@@ -57,7 +57,7 @@ namespace AnimalMatchingGame
                     AnimalButtons.IsVisible = false;
                     PlayAgainButton.IsVisible = true;
 
-                    await DisplayAlertAsync("Alert", "You Win!", "OK");
+                    // await DisplayAlertAsync("Alert", "You Win!", "OK"); future development, removed to preserve curriculum progress.
                 }
             }
 
