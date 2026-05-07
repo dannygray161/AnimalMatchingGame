@@ -33,7 +33,7 @@ namespace AnimalMatchingGame
         {
             if(sender is Button buttonClicked) // if an animal button is clicked
             {
-                if(!string.IsNullOrWhiteSpace(buttonClicked.Text) && (findingMatch = false)) // if the button is not blank, and we havent matched yet
+                if(!string.IsNullOrWhiteSpace(buttonClicked.Text) && (findingMatch == false)) // if the button is not blank, and we havent matched yet
                 {
                     buttonClicked.BackgroundColor = Colors.Red; 
                     lastClicked = buttonClicked; // track what we just clicked
