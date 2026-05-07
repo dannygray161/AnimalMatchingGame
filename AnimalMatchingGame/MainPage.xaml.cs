@@ -57,6 +57,7 @@ namespace AnimalMatchingGame
                     AnimalButtons.IsVisible = false;
                     PlayAgainButton.IsVisible = true;
 
+                    // TODO: Add a pop up alert to alert the user they have won the game
                     // await DisplayAlertAsync("Alert", "You Win!", "OK"); future development, removed to preserve curriculum progress.
                 }
             }
